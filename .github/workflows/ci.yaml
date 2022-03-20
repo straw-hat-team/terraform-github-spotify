@@ -10,10 +10,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2.3.1
 
-      - name: Install Terraform
-        uses: hashicorp/setup-terraform@v1.1.0
+      - name: Read Terraform Version from .tool-versions
+        uses: straw-hat-team/github-actions-workflows/asdf/get-version@v1.3.0
+        id: terraform-version
         with:
-          terraform_version: 0.12.28
+          plugin-name: terraform
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v1.3.2
+        with:
+          terraform_version: ${{ steps.terraform-version.outputs.plugin-version }}
 
       - name: Terraform format
         run: terraform fmt -check -recursive .

@@ -2,14 +2,19 @@
 
 This module allows you to manage GitHub teams for tribes.
 
-## Example usage
+## How-To Guides
 
-```hcl
-module "infrastructure_tribe" {
-  source              = "straw-hat-team/spotify/github//modules/tribe"
-  version             = "0.0.1"
-  github_token        = "your github access token"
-  github_organization = "my-org"
-  tribe_name          = "infrastructure"
-}
-```
+### Add an alliance to an organization
+
+1. Create or find a GitHub Access Token.
+2. Configure the module, for example:
+
+    ```hcl
+    module "infrastructure_tribe" {
+      source              = "straw-hat-team/spotify/github//modules/tribe"
+      version             = "0.0.1"
+      github_token        = "your github access token"
+      github_organization = "my-org"
+      tribe_name          = "infrastructure"
+    }
+    ```

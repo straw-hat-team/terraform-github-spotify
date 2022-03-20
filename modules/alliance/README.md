@@ -2,14 +2,19 @@
 
 This module allows you to manage GitHub teams for alliances.
 
-## Example usage
+## How-To Guides
 
-```hcl
-module "horde_alliance" {
-  source              = "straw-hat-team/spotify/github//modules/alliance"
-  version             = "0.0.1"
-  github_token        = "your github access token"
-  github_organization = "my-org"
-  alliance_name       = "horde"
-}
-```
+### Add an alliance to an organization
+
+1. Create or find a GitHub Access Token.
+2. Configure the module, for example:
+
+    ```hcl
+    module "horde_alliance" {
+      source              = "straw-hat-team/spotify/github//modules/alliance"
+      version             = "0.0.1"
+      github_token        = "your github access token"
+      github_organization = "my-org"
+      alliance_name       = "horde"
+    }
+    ```
