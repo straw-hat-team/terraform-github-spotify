@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Read Terraform Version from .tool-versions
         uses: straw-hat-team/github-actions-workflows/asdf/get-version@v1.5.0
