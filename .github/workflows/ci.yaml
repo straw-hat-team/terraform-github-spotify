@@ -17,7 +17,7 @@ jobs:
           plugin-name: terraform
 
       - name: Install Terraform
-        uses: hashicorp/setup-terraform@v3.0.0
+        uses: hashicorp/setup-terraform@v3.1.0
         with:
           terraform_version: ${{ steps.terraform-version.outputs.plugin-version }}
 
