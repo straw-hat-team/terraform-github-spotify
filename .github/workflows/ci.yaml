@@ -7,19 +7,14 @@ jobs:
     name: Terraform
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Read Terraform Version from .tool-versions
-        uses: straw-hat-team/github-actions-workflows/asdf/get-version@v1.7.0
-        id: terraform-version
+      - uses: actions/checkout@v4.2.2
+      - uses: straw-hat-team/github-actions-workflows/asdf/get-version@v1.7.0
+        id: opentofu-version
         with:
-          plugin-name: terraform
-
-      - name: Install Terraform
-        uses: hashicorp/setup-terraform@v3.1.2
+          plugin-name: opentofu
+      - uses: opentofu/setup-opentofu@v1.0.5
         with:
-          terraform_version: ${{ steps.terraform-version.outputs.plugin-version }}
-
-      - name: Terraform format
-        run: terraform fmt -check -recursive .
+          tofu_version: ${{ steps.opentofu-version.outputs.plugin-version }}
+          tofu_wrapper: true
+      - name: tofu fmt
+        run: tofu fmt -check -recursive -diff
