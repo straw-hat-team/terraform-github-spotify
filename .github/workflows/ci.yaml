@@ -12,7 +12,7 @@ jobs:
         id: opentofu-version
         with:
           plugin-name: opentofu
-      - uses: opentofu/setup-opentofu@v1.0.5
+      - uses: opentofu/setup-opentofu@v1.0.6
         with:
           tofu_version: ${{ steps.opentofu-version.outputs.plugin-version }}
           tofu_wrapper: true
