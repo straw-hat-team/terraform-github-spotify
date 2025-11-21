@@ -7,7 +7,7 @@ jobs:
     name: Terraform
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5.0.0
+      - uses: actions/checkout@v6.0.0
       - uses: straw-hat-team/github-actions-workflows/asdf/get-version@v1.7.8
         id: opentofu-version
         with:
