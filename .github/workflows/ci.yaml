@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: straw-hat-team/github-actions-workflows/asdf/get-version@a5940bd7110b44acd9fd23b250e95ed4bc3e8848 # v1.11.0
+      - uses: straw-hat-team/github-actions-workflows/asdf/get-version@584a3ef553828729a59758a4ca26ac13b55bd385 # v2.0.0
         id: opentofu-version
         with:
           plugin-name: opentofu
